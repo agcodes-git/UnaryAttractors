@@ -62,6 +62,8 @@ while True:
             if e > 0:
                 pygame.draw.line(s,color,(e*scale+width/10,-graphs[g][e]*scale+height-50),((e-1)*scale+width/10,-graphs[g][e-1]*scale+height-50))
             pygame.draw.rect(s,color,(e*scale + width/10,-graphs[g][e]*scale + height-50 ,1,1))
+            if graphs[g][e] == e and g > 0:
+                pygame.draw.ellipse(s,(255,0,255),(e*scale+width/10-scale/2,-graphs[g][e]*scale+height-50-scale/2,scale,scale),1)
 
     basicfont = pygame.font.SysFont(None,24)
     text = basicfont.render('Rule: '+str(rule),True, (90,90,90))
